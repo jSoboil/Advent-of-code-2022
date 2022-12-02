@@ -33,7 +33,7 @@ v_total_calories <- aggregate(v_n_calorie_v3$Calories,
  na.omit(v_total_calories)
 # find the max calories carried by an elf
 max(v_total_calories)
-# find the total calories of the top three elves
+# find the total calories of the three elves with the most calories
 v_total_calories[order(v_total_calories$x, decreasing = TRUE)[1:3], 2] |> sum()
 
 # End file ----------------------------------------------------------------
