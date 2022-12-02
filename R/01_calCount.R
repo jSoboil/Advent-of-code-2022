@@ -9,12 +9,12 @@ if (any(installed_packages == FALSE)) {
 # load required packages:
 invisible(lapply(pkgs, library, character.only = TRUE))
 # load data
-v_n_calorie <- read.csv(file = "data-raw/data.rtf")
+v_n_calorie <- read.csv(file = "data-raw/01_day/data.txt")
 
 # Data wrangling ----------------------------------------------------------
 v_n_calorie <- v_n_calorie[8:nrow(v_n_calorie), ]
 # remove forward slash
-v_n_calorie_v2 <- gsub(pattern = "\s+", replacement = "", 
+v_n_calorie_v2 <- gsub(pattern = "\\", replacement = "", 
                        x = v_n_calorie, fixed = TRUE)
 # transform to data frame
 v_n_calorie_v2 <- as.data.frame(v_n_calorie_v2)
